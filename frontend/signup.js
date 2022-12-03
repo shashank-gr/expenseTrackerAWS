@@ -25,7 +25,7 @@ const resgisterUser = async (e) => {
   };
   try {
     const response = await axios.post(
-      "http://localhost:3000/user/signup",
+      "http://3.108.228.155:3000/user/signup",
       data
     );
     createToast(response.data.msg, "green");

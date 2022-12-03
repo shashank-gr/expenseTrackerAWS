@@ -18,7 +18,7 @@ const login = async (e) => {
   const password = document.querySelector("#password").value;
   const data = { email, password };
   try {
-    const response = await axios.post("http://localhost:3000/user/login", data);
+    const response = await axios.post("http://3.108.228.155:3000/user/login", data);
     createToast(response.data.msg, "green");
     // console.log(response.data);
     localStorage.setItem("token", response.data.token);
@@ -46,7 +46,7 @@ const forgetPassSubmit = async (e) => {
     const email = e.target.querySelector("#forgot-pass-id").value;
     const data = { email };
     const response = await axios.post(
-      "http://localhost:3000/password/forgotpassword",
+      "http://3.108.228.155:3000/password/forgotpassword",
       data
     );
     createToast(response.data.msg, "green");

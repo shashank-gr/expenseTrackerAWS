@@ -84,7 +84,7 @@ const getAllUsersExpenses = async (page = 1) => {
     ulOthers.innerHTML = "";
     const paginate = localStorage.getItem("paginate-rows") || 5;
     const response = await axios.get(
-      `http://localhost:3000/premiumUser/getAllExpenses?page=${page}&paginate=${paginate}`
+      `http://3.108.228.155:3000/premiumUser/getAllExpenses?page=${page}&paginate=${paginate}`
     );
     // console.log(response.data.pagination);
     const expenses = response.data.expenses;
@@ -111,7 +111,7 @@ const onPaginationBtnclickOthers = (e) => {
 const generateReport = async () => {
   try {
     const respone = await axios.get(
-      "http://localhost:3000/premiumUser/generateReport"
+      "http://3.108.228.155:3000/premiumUser/generateReport"
     );
     if (respone.status == 200) {
       const a = document.createElement("a");
@@ -150,7 +150,7 @@ const verifySignature = async (
   try {
     const data = { razorpay_payment_id, razorpay_order_id, razorpay_signature };
     const respone = await axios.post(
-      "http://localhost:3000/razorPay/verifySignature",
+      "http://3.108.228.155:3000/razorPay/verifySignature",
       data
     );
     // console.log(respone.data.msg);
@@ -205,7 +205,7 @@ const onPay = (e) => {
 
 const onGoPremium = async (e) => {
   try {
-    const response = await axios.post("http://localhost:3000/razorPay/order");
+    const response = await axios.post("http://3.108.228.155:3000/razorPay/order");
     order = response.data.order;
     // console.log(order);
     goPremium.remove();
@@ -223,7 +223,7 @@ const onClick = async (e) => {
     const id = e.target.parentElement.querySelector(".user-id").value;
     try {
       const response = await axios.delete(
-        `http://localhost:3000/expense/deleteExpense/${id}`
+        `http://3.108.228.155:3000/expense/deleteExpense/${id}`
       );
 
       if (response.status == 200) {
@@ -275,7 +275,7 @@ const onSubmit = async (e) => {
   };
   try {
     const response = await axios.post(
-      "http://localhost:3000/expense/addexpense",
+      "http://3.108.228.155:3000/expense/addexpense",
       data
     );
     console.log(response.data);
@@ -336,7 +336,7 @@ const fetchPaginationExpenses = async (page = 1) => {
     const paginate = localStorage.getItem("paginate-rows") || 5;
     // console.log(paginate);
     const response = await axios.get(
-      `http://localhost:3000/expense/getExpenses?page=${page}&paginate=${paginate}`
+      `http://3.108.228.155:3000/expense/getExpenses?page=${page}&paginate=${paginate}`
     );
     response.data.expenses.forEach((expense) => {
       displayExpense(expense);
@@ -360,7 +360,7 @@ const onDOMloaded = async () => {
   try {
     // console.log(response);//all the expenses
     const premium = await axios.get(
-      "http://localhost:3000/premiumUser/isPremium"
+      "http://3.108.228.155:3000/premiumUser/isPremium"
     );
     if (premium.data.isPremium) {
       premiumFeature();

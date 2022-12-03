@@ -36,6 +36,10 @@ app.use("/expense", expenseRoute);
 app.use("/razorPay", razorPayRoute);
 app.use("/premiumUser", premiumRoute);
 app.use("/password", forgotPassRoute);
+app.use((req, res) => {
+  const url = req.url;
+  res.sendFile(path.join(__dirname, `frontend/${req.url}`));
+});
 
 app.use((req, res) => {
   console.log(req.url);

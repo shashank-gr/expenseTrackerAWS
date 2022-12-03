@@ -63,7 +63,7 @@ exports.getResetPassword = async (req, res) => {
     if (resetPassRow && resetPassRow.isResetActive) {
       // console.log(path.dirname(require.main.filename));
       res.status(200).send(`<form
-      action="http://localhost:3000/password/updatepassword/${resetPassRow.id}"
+      action="http://3.108.228.155:3000/password/updatepassword/${resetPassRow.id}"
       method="get"
     >
       <h3>Enter new password</h3>
