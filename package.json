@@ -1,0 +1,28 @@
+{
+  "name": "expensetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shashanka G R",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1266.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "razorpay": "^2.8.4",
+    "sequelize": "^6.25.8",
+    "sib-api-v3-sdk": "^8.4.2",
+    "uuid": "^9.0.0"
+  }
+}
